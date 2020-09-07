@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit(nameForm)" #nameForm="ngForm">
+
+
+  <input #fNameInputField ngModel required name="fname"/>
+
+  <input #lNameInputField ngModel name="lname"/>
+
+  <button type="submit">Submit</button>
+</form>
+<button (click)=onUpdate()>Update</button>
+
+
+  <div *ngFor="let elem of persons | async; let i = index">
+
+  <p (click)=onRemove(elem.id)> {{  elem  | json }} </p>
+
+    <button (click)=selectUser(elem)> Select</button>
+
+  </div>
+
+
